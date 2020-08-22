@@ -10,7 +10,7 @@ interface SelectProps {
 export const Select = ({ language, languages, onChange }: SelectProps) => (
   <select value={language} onChange={onChange}>
     {languages.map(l => (
-      <option value={l.code}>{l.name}</option>
+      <option key={l.code} value={l.code}>{l.name}</option>
     ))}
   </select>
 );
