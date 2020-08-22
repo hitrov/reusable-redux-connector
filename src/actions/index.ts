@@ -9,3 +9,8 @@ export const setLanguage = (language: string) => ({
   type: SET_LANGUAGE,
   language,
 } as SetLanguage);
+
+export interface SetLanguage {
+  type: typeof SET_LANGUAGE;
+  language: string;
+}
