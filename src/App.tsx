@@ -25,7 +25,7 @@ function getConnectedComponent(Component: React.ComponentType) {
 const ConnectedContent = connector(Content);
 
 interface LoadingProps {
-  loading: boolean;
+  loading?: boolean;
 }
 
 const withLoading = <P extends {}>(Component: React.ComponentType<P>) => (props: P & LoadingProps) => (
