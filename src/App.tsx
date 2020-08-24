@@ -24,6 +24,25 @@ function getConnectedComponent(Component: React.ComponentType) {
 // const ConnectedContent = getConnectedComponent(Content);
 const ConnectedContent = connector(Content);
 
+interface LoadingProps {
+  loading: boolean;
+}
+
+const withLoading = <P extends {}>(Component: React.ComponentType<P>) => (props: P & LoadingProps) => (
+  <>
+    {props.loading && <div>Loading</div>}
+    <Component {...props as P} />
+  </>
+);
+
+const ContentWithLoading = withLoading(Content);
+
+// function App() {
+//   return (
+//     <ContentWithLoading language={'ru'} loading={true} />
+//   );
+// }
+
 function App() {
   return (
     <ConnectedContent />
